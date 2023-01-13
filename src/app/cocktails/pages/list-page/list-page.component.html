@@ -1,0 +1,7 @@
+<app-filter (submitOutput)='search($event)'></app-filter>
+<app-list [drinks]='drinksPage'></app-list>
+<app-list-paginator
+  (pageChange)='pageChange($event)'
+  [actualPage]='page'
+  [totalItems]='totalDrinks'
+></app-list-paginator>

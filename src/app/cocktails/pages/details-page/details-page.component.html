@@ -1,0 +1,30 @@
+<div *ngIf='drink && isDrink; else noDrink' class='container text-center'>
+  <h1>{{ drink.strDrink }}</h1>
+  <img [src]='drink.strDrinkThumb' alt='Imagen del cocktail' />
+  <h2>Instrucciones</h2>
+  <p>{{ drink.strInstructions }}</p>
+  <div class='row'>
+    <div class='col'>
+      <h3>Ingredientes</h3>
+      <ul class='list-group'>
+        <li *ngFor='let ingredient of ingredients' class='list-group-item'>
+          {{ ingredient }}
+        </li>
+      </ul>
+    </div>
+    <div class='col'>
+      <h3>Measure</h3>
+      <ul class='list-group'>
+        <li *ngFor='let measure of measures' class='list-group-item'>
+          {{ measure }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<ng-template #noDrink>
+  <p class='text-center'>No se encuentran los detalles de esa bebida</p>
+</ng-template>
+
+<a [routerLink]="['/']" class='btn btn-primary mt-2 w-100'>Volver</a>

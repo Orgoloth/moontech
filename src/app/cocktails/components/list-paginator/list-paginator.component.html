@@ -1,0 +1,16 @@
+<div *ngIf='totalPages() > 1' class='d-flex w-50 mx-auto gap-2 flex-wrap'>
+  <button (click)='prev()' class='btn btn-light flex-grow-1'>
+    << Anterior
+  </button>
+  <button
+    (click)='specific(i)'
+    *ngFor='let _ of [].constructor(totalPages()); let i = index'
+    [ngClass]="i === actualPage ? 'btn-primary' : 'btn-light'"
+    class='btn'
+  >
+    {{ i + 1 }}
+  </button>
+  <button (click)='next()' class='btn btn-light flex-grow-1'>
+    Siguiente >>
+  </button>
+</div>

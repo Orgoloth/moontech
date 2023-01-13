@@ -1,0 +1,8 @@
+<p *ngIf='!drinks?.length' class='text-center'>No se encontraron cocktails</p>
+<div class='row mx-auto'>
+  <app-list-item
+    *ngFor='let drink of drinks; trackBy: trackByItems'
+    [drink]='drink'
+    class='col mb-3'
+  ></app-list-item>
+</div>

@@ -1,0 +1,13 @@
+<div *ngIf='drink' class='card' style='width: 18rem'>
+  <img alt='Drink image' class='card-img-top' src='{{ drink.strDrinkThumb }}' />
+  <div class='card-body  d-flex align-items-center justify-content-center'>
+    <h5 class='card-title'>{{ drink.strDrink }}</h5>
+  </div>
+  <div class='card-footer text-center'>
+    <a
+      [routerLink]="['/', PATHS.DETAILS, drink.idDrink]"
+      class='btn btn-primary'
+    >Ver detalles
+    </a>
+  </div>
+</div>

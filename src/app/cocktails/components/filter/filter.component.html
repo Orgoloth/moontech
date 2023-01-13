@@ -1,0 +1,31 @@
+<div class='card shadow m-4 p-4'>
+  <form *ngIf='form' [formGroup]='form'>
+    <div class='row align-items-end'>
+      <div class='col'>
+        <label class='form-label' for='key'>Buscar por:</label>
+        <select class='form-select' formControlName='key' id='key'>
+          <option
+            *ngFor='let key of QUERY_KEYS | keyvalue'
+            value='{{ key.value }}'
+          >
+            {{ key.value }}
+          </option>
+        </select>
+      </div>
+      <div class='col'>
+        <label class='form-label' for='value'>Con el valor:</label>
+        <input
+          class='form-control'
+          formControlName='value'
+          id='value'
+          type='text'
+        />
+      </div>
+      <div class='col'>
+        <button (click)='submit()' class='btn btn-primary w-100' type='submit'>
+          Buscar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
